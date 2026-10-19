@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#12364a">
+  <meta name="description" content="MINDSET QUIZ REFORMASI MINDA KP2027 - Borang soal selidik guru dan dashboard analisis.">
+  <title>MINDSET QUIZ REFORMASI MINDA KP2027</title>
+  <style>
+    * { box-sizing: border-box; }
+    html,body { margin:0; padding:0; height:100%; background:#f4f7fb; font:16px/1.5 Arial, sans-serif; }
+    .frame { display:block; width:100%; height:100vh; height:100dvh; border:0; background:#f4f7fb; }
+    .warning { display:none; position:absolute; inset:0; padding:24px; place-items:center; }
+    .warning.show { display:grid; }
+    .card { max-width:580px; width:100%; padding:32px; background:white; color:#12364a; border:1px solid #e4eaf0; border-radius:18px; box-shadow:0 15px 45px #16314419; text-align:center; }
+    h1 {font-size:23px; margin:0 0 12px; }
+    p {margin:0 0 12px; }
+    .small { color:#6c7b8d; font-size:13px; }
+    .spinner { width:32px; height:32px; border-radius:50%; border:4px solid #b9ece1; border-top-color:#16a085; animation: spin .8s linear infinite; margin:0 auto 16px; }
+    @keyframes spin { to {transform:rotate(360deg);} }
+    @media (prefers-reduced-motion:reduce) {.spinner{animation:none;}}
+  </style>
+</head>
+<body>
+  <!-- PENTING: Hanya URL deployment /exec dimasukkan di sini. Jangan letak kata laluan pentadbir atau ID spreadsheet. -->
+  <script>
+    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyvNJ57SGDXqbqZ6n0bVnzOJsv9rXQ42_-o-tisNKh1axUBg82A-x2Yv0zGUkMRSmPt/exec';
+  </script>
+  <div id="feedback" class="warning" role="status" aria-live="polite">
+    <div class="card">
+      <div class="spinner" aria-hidden="true"></div>
+      <h1>MINDSET QUIZ REFORMASI MINDA KP2027</h1>
+      <p id="message">Website sedang dibuka…</p>
+      <p class="small" id="hint">Sila tunggu sebentar.</p>
+    </div>
+  </div>
+  <iframe id="quizFrame" class="frame" title="MINDSET QUIZ REFORMASI MINDA KP2027" referrerpolicy="strict-origin-when-cross-origin" allow="clipboard-write" loading="eager"></iframe>
+  <script>
+    (function () {
+      const iframe = document.getElementById('quizFrame');
+      const warning = document.getElementById('feedback');
+      const message = document.getElementById('message');
+      const hint = document.getElementById('hint');
+      const url = WEB_APP_URL.trim();
+      if (!/^https:\/\/script\.google\.com\/macros\/s\/[a-zA-Z0-9_-]+\/exec(?:\?.*)?$/.test(url)) {
+        iframe.hidden = true;
+        warning.classList.add('show');
+        message.textContent = 'Sambungan website belum dikonfigurasi.';
+        hint.textContent = 'Pemilik website perlu menggantikan TAMPAL_URL_APPS_SCRIPT_EXEC_DI_SINI dengan URL deployment /exec sebenar dalam fail index.html.';
+        document.title = 'Persediaan MINDSET QUIZ KP2027';
+        return;
+      }
+      warning.classList.add('show');
+      iframe.addEventListener('load', () => { warning.classList.remove('show'); }, {once:true});
+      iframe.src = url;
+      // Loading eventually stops once the Apps Script page is loaded. If Google blocks
+      // embedding, check the latest deployment and ALLOWALL in Code.gs.
+    })();
+  </script>
+</body>
+</html>
